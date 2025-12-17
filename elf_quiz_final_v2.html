@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magical Elf Name Quiz – Skeepers Holiday Edition</title>
+  <style>
+    :root {
+      --red:#cc3a3a;
+      --bg:#fffdf7;
+      --line:#e8d8c8;
+      --accent:#206a5d;
+    }
+    body {font-family: Arial, system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); margin:0; color:#2b1a1a;}
+    header {display:flex; align-items:center; gap:16px; padding:16px 20px; background:#fbeceb; border-bottom:3px solid var(--red);} 
+    header img {height:64px;}
+    header .title {font-weight:800; font-size:24px; color:#7a1f1f}
+    main {max-width:900px; margin:24px auto; padding:0 16px;}
+    h1 {text-align:center; color:var(--red); font-size:30px; margin:12px 0 4px;}
+    p.intro {text-align:center; color:#4a2a2a; margin:4px 0 24px;}
+    .card {background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; margin:14px 0; box-shadow:0 2px 8px rgba(0,0,0,.05);} 
+    .q-title {font-weight:700; margin-bottom:8px;}
+    .options {display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:8px;}
+    label.opt {display:flex; align-items:center; gap:10px; border:1px dashed #e6d6c6; border-radius:10px; padding:10px; cursor:pointer;}
+    label.opt:hover {background:#fff7f1}
+    .opt input {accent-color: var(--red);} 
+    .emoji {font-size:22px;}
+    .actions {display:flex; gap:10px; justify-content:center; margin:18px 0;}
+    button {background:var(--red); color:#fff; border:none; border-radius:10px; padding:12px 16px; font-weight:700; cursor:pointer;}
+    button.secondary {background:#efefef; color:#333;}
+    .result {display:none;}
+    .result-card {background:#fff; border:2px solid var(--red); border-radius:14px; padding:16px; margin-top:12px;}
+    .result-title {font-size:22px; font-weight:800; color:var(--red);} 
+    .result-emoji {font-size:32px;}
+    .footer {text-align:center; color:#7a7a7a; font-size:12px; margin-top:24px;}
+    .confetti {position:fixed; inset:0; pointer-events:none;}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="image.png" alt="Skeepers Christmas Logo" />
+    <div class="title">🎄 The Great Parade of Magical Elves! ✨</div>
+  </header>
+  <main>
+    <h1>Magical Elf Name Quiz</h1>
+    <p class="intro">Answer the three questions to reveal the <strong>holiday identity and superpower of your colleague.</strong></p>
+
+    <!-- Q1 -->
+    <section class="card" id="q1">
+      <div class="q-title">Q1. What’s your favorite holiday treat?</div>
+      <div class="options">
+        <!-- A to P mapping -->
+        <label class="opt"><input type="radio" name="q1" value="A"> <span class="emoji">❄️</span> Snowflake cookies</label>
+        <label class="opt"><input type="radio" name="q1" value="B"> <span class="emoji">🍭</span> Candy canes</label>
+        <label class="opt"><input type="radio" name="q1" value="C"> <span class="emoji">🌲</span> Tree cupcakes</label>
+        <label class="opt"><input type="radio" name="q1" value="D"> <span class="emoji">🍯</span> Caramel fudge</label>
+        <label class="opt"><input type="radio" name="q1" value="E"> <span class="emoji">🌰</span> Almond biscuits</label>
+        <label class="opt"><input type="radio" name="q1" value="F"> <span class="emoji">🍬</span> Sweet gummies</label>
+        <label class="opt"><input type="radio" name="q1" value="G"> <span class="emoji">🍪</span> Chocolate chip cookies</label>
+        <label class="opt"><input type="radio" name="q1" value="H"> <span class="emoji">🌼</span> Vanilla cake</label>
+        <label class="opt"><input type="radio" name="q1" value="I"> <span class="emoji">😂</span> Chestnut pralines</label>
+        <label class="opt"><input type="radio" name="q1" value="J"> <span class="emoji">🎶</span> Honey & Hazelnut spread</label>
+        <label class="opt"><input type="radio" name="q1" value="K"> <span class="emoji">💨</span> Mint chocolates</label>
+        <label class="opt"><input type="radio" name="q1" value="L"> <span class="emoji">🍫</span> Hot cocoa</label>
+        <label class="opt"><input type="radio" name="q1" value="M"> <span class="emoji">🧇</span> Waffles</label>
+        <label class="opt"><input type="radio" name="q1" value="N"> <span class="emoji">🍷</span> Mulled wine</label>
+        <label class="opt"><input type="radio" name="q1" value="O"> <span class="emoji">🍯</span> Honey toast</label>
+        <label class="opt"><input type="radio" name="q1" value="P"> <span class="emoji">✨</span> Spiced star cookies</label>
+      </div>
+    </section>
+
+    <!-- Q2 -->
+    <section class="card" id="q2">
+      <div class="q-title">Q2. Which magical power would you love to have?</div>
+      <div class="options">
+        <label class="opt"><input type="radio" name="q2" value="A"> Control snowflakes to write in the sky</label>
+        <label class="opt"><input type="radio" name="q2" value="B"> Turn everything you touch into candy</label>
+        <label class="opt"><input type="radio" name="q2" value="C"> Grow mini decorated trees instantly</label>
+        <label class="opt"><input type="radio" name="q2" value="D"> Fix anything with magic caramel</label>
+        <label class="opt"><input type="radio" name="q2" value="E"> Make things soft/crunchy/melty by emotion</label>
+        <label class="opt"><input type="radio" name="q2" value="F"> Spread a sweet scent that calms or excites</label>
+        <label class="opt"><input type="radio" name="q2" value="G"> Multiply objects into edible versions</label>
+        <label class="opt"><input type="radio" name="q2" value="H"> Make arguments vanish with vanilla aroma</label>
+        <label class="opt"><input type="radio" name="q2" value="I"> Make people slide with joy through laughter</label>
+        <label class="opt"><input type="radio" name="q2" value="J"> Energize everyone with magical songs</label>
+        <label class="opt"><input type="radio" name="q2" value="K"> Blow an icy breeze stronger than coffee</label>
+        <label class="opt"><input type="radio" name="q2" value="L"> Brew relaxing hot drinks instantly</label>
+        <label class="opt"><input type="radio" name="q2" value="M"> Turn trees into giant waffle irons</label>
+        <label class="opt"><input type="radio" name="q2" value="N"> Conjure festive drinks for creativity</label>
+        <label class="opt"><input type="radio" name="q2" value="O"> Create warm honey clouds of comfort</label>
+        <label class="opt"><input type="radio" name="q2" value="P"> Sprinkle sparkling star-anise snow</label>
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section class="card" id="q3">
+      <div class="q-title">Q3. Pick your holiday vibe:</div>
+      <div class="options">
+        <label class="opt"><input type="radio" name="q3" value="A"> Frosty & magical</label>
+        <label class="opt"><input type="radio" name="q3" value="B"> Sweet & playful</label>
+        <label class="opt"><input type="radio" name="q3" value="C"> Nature & cozy</label>
+        <label class="opt"><input type="radio" name="q3" value="D"> Warm & comforting</label>
+        <label class="opt"><input type="radio" name="q3" value="E"> Crunchy & festive</label>
+        <label class="opt"><input type="radio" name="q3" value="F"> Aromatic & soothing</label>
+        <label class="opt"><input type="radio" name="q3" value="G"> Fun & foodie</label>
+        <label class="opt"><input type="radio" name="q3" value="H"> Calm & peaceful</label>
+        <label class="opt"><input type="radio" name="q3" value="I"> Joyful & surprising</label>
+        <label class="opt"><input type="radio" name="q3" value="J"> Musical & lively</label>
+        <label class="opt"><input type="radio" name="q3" value="K"> Fresh & energizing</label>
+        <label class="opt"><input type="radio" name="q3" value="L"> Relaxed & cozy</label>
+        <label class="opt"><input type="radio" name="q3" value="M"> Creative & quirky</label>
+        <label class="opt"><input type="radio" name="q3" value="N"> Social & festive</label>
+        <label class="opt"><input type="radio" name="q3" value="O"> Snuggly & sweet</label>
+        <label class="opt"><input type="radio" name="q3" value="P"> Sparkly & elegant</label>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="reveal">🎁 Reveal my Elf!</button>
+      <button id="reset" class="secondary">↺ Reset</button>
+      <button id="copy" class="secondary">📋 Copy result</button>
+    </div>
+
+    <section class="result" id="result">
+      <div class="result-card">
+        <div class="result-title"><span class="result-emoji" id="rEmoji">✨</span> <span id="rElf">Your Elf Name</span></div>
+        <div><strong>Name:</strong> <span id="rName">—</span></div>
+        <div><strong>Magic Power:</strong> <span id="rPower">—</span></div>
+      </div>
+    </section>
+    <canvas class="confetti" id="confettiCanvas"></canvas>
+    <div class="footer">Skeepers Holiday Edition · Elf Quiz</div>
+  </main>
+  <script>
+    // Data catalog mapped by letter A..P
+    const catalog = {
+      A: {emoji:'❄️', name:'Alix', elf:'Alix of Snowflakes', power:'Controls snowflakes to write messages in the sky.'},
+      B: {emoji:'🍭', name:'Leslie', elf:'The Candy Elf', power:'Turns everything he touches into candy (sometimes in spite of himself).'},
+      C: {emoji:'🌲', name:'Simone', elf:'Simone Sprucelet', power:'Grows mini trees instantly… decorated!'},
+      D: {emoji:'🍯', name:'Justine', elf:'Justine Carameline', power:'Can fix anything broken with magic caramel.'},
+      E: {emoji:'🌰', name:'Alexandra', elf:'Alexandra Almond', power:'Makes everything soft, crunchy or melting depending on your emotions.'},
+      F: {emoji:'🍬', name:'Célia', elf:'Célia Sweetsoft', power:'Diffuses a sweet smell that soothes or excites the elves.'},
+      G: {emoji:'🍪', name:'Cloé', elf:'Cloé Christmas Crunch', power:'Bite an object → it multiplies into edible versions.'},
+      H: {emoji:'🌼', name:'Émilie', elf:'Émilie Vanilla Spice', power:'Its vanilla scent makes arguments disappear.'},
+      I: {emoji:'😂', name:'Emmanuelle', elf:'Emma Glazed Chestnut', power:'Her laughter literally makes people slide with joy.'},
+      J: {emoji:'🎶', name:'Mélanie', elf:'Melani Honey & Hazelnut', power:'Her songs give energy like hot chocolate.'},
+      K: {emoji:'💨', name:'Mohamed‑Saïd', elf:'Moha Frosted Mint', power:'Blows an icy breeze that wakes you up instantly (stronger than coffee).'},
+      L: {emoji:'🍫', name:'Caroline', elf:'Caro Cocoa Rum', power:'Instantly brews hot drinks that relax.'},
+      M: {emoji:'🧇', name:'Gwenaelle', elf:'Gwen Forest Waffle', power:'Can turn trees into giant waffle irons (yes, that’s useful).'},
+      N: {emoji:'🍷', name:'Julien Duchateau', elf:'Julien Winestar', power:'Brings festive beverages that spark creativity and conviviality.'},
+      O: {emoji:'🍯', name:'Marco', elf:'Marco Winter Honey', power:'Creates warm honey clouds that comfort and energize.'},
+      P: {emoji:'✨', name:'Karim', elf:'Karim Star Anise', power:'Sends sparkling star‑anise snow that boosts focus and calm.'}
+    };
+
+    const picks = () => {
+      const get = q => (document.querySelector(`input[name=${q}]:checked`)||{}).value;
+      return {q1:get('q1'), q2:get('q2'), q3:get('q3')};
+    }
+
+    function computeResult() {
+      const {q1, q2, q3} = picks();
+      if(!q1 || !q2 || !q3) { alert('Please answer all three questions.'); return null; }
+      const counts = {};
+      [q1,q2,q3].forEach(k=>{ counts[k] = (counts[k]||0)+1; });
+      // Highest count wins; tie-breaker priority Q2 > Q3 > Q1
+      let best = q2;
+      Object.entries(counts).sort((a,b)=>b[1]-a[1]).forEach(([k])=>{ if(!best || counts[k]>counts[best]) best=k; });
+      if(counts[q2]===counts[best]) best=q2; else if(counts[q3]===counts[best]) best=q3; else best=q1;
+      return catalog[best];
+    }
+
+    function showResult(row){
+      if(!row) return;
+      document.getElementById('rEmoji').textContent = row.emoji;
+      document.getElementById('rElf').textContent = row.elf;
+      document.getElementById('rName').textContent = row.name;
+      document.getElementById('rPower').textContent = row.power;
+      document.getElementById('result').style.display = 'block';
+      launchConfetti();
+    }
+
+    // Confetti (simple emoji sprinkles)
+    function launchConfetti(){
+      const canvas = document.getElementById('confettiCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width = window.innerWidth;
+      const H = canvas.height = window.innerHeight;
+      const pieces = Array.from({length:120}).map(()=>({
+        x: Math.random()*W,
+        y: -10 - Math.random()*H,
+        s: 16+Math.random()*16,
+        v: 1+Math.random()*3,
+        a: Math.random()*Math.PI*2,
+        ch: ['✨','⭐','❄️','🎄'][Math.floor(Math.random()*4)]
+      }));
+      let animation;
+      function step(){
+        ctx.clearRect(0,0,W,H);
+        pieces.forEach(p=>{
+          p.y += p.v; p.x += Math.sin(p.a)*0.6; p.a += 0.03;
+          ctx.font = `${p.s}px serif`; ctx.fillText(p.ch, p.x, p.y);
+        });
+        animation = requestAnimationFrame(step);
+      }
+      step();
+      setTimeout(()=>cancelAnimationFrame(animation), 3000);
+    }
+
+    document.getElementById('reveal').addEventListener('click', ()=>{ const r = computeResult(); showResult(r); });
+    document.getElementById('reset').addEventListener('click', ()=>{ document.querySelectorAll('input[type=radio]').forEach(i=>i.checked=false); document.getElementById('result').style.display='none'; });
+    document.getElementById('copy').addEventListener('click', ()=>{
+      const e = document.getElementById('rElf').textContent;
+      const n = document.getElementById('rName').textContent;
+      const p = document.getElementById('rPower').textContent;
+      const em = document.getElementById('rEmoji').textContent;
+      const text = `${em} ${n} — ${e} — ${p}`;
+      navigator.clipboard.writeText(text).then(()=>alert('Copied to clipboard!'));
+    });
+  </script>
+</body>
+</html>
